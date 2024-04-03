@@ -1,8 +1,14 @@
 import React from "react";
 import {CheckboxGroup, Checkbox} from "@nextui-org/react";
-
+// import { UseSelector } from "react-redux";
+// import { searchItem } from "../redux/Slices/itemSlice";
 
 export default function CategoriesList(){
+
+    // const newItem = UseSelector(state => state.searchedItem.desiredItem)
+
+    // console.log('we are in categoriesList: ', newItem);
+
 
     return(
         <div className="top-[5em] left-[1em] bg-[#27272a] border-[#27272a] border-solid border-1 rounded-lg  w-1/6 h-[32rem] relative">

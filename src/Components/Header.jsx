@@ -2,7 +2,6 @@ import {useState} from 'react'
 import {FaOpencart, FaShoppingCart} from 'react-icons/fa'
 import Hamburger from 'hamburger-react';
 import Searchbar from '../Utilities/Searchbar/Searchbar';
-
 function Header() {
 
     const [isOpen, setOpen] = useState(false);

@@ -10,6 +10,5 @@ export default function App() {
       <Divider className="my-3"/>
       <CategoriesList/>
     </div>
-    
   )
 }
