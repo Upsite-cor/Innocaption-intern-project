@@ -1,13 +1,13 @@
 import React from "react";
 import {CheckboxGroup, Checkbox} from "@nextui-org/react";
-// import { UseSelector } from "react-redux";
-// import { searchItem } from "../redux/Slices/itemSlice";
+import { useSelector } from "react-redux";
+import { searchItem } from "../redux/Slices/itemSlice";
 
 export default function CategoriesList(){
 
-    // const newItem = UseSelector(state => state.searchedItem.desiredItem)
+    const newItem = useSelector(state => state.searchedItem.desiredItem)
 
-    // console.log('we are in categoriesList: ', newItem);
+    console.log('we are in categoriesList: ', newItem);
 
 
     return(
