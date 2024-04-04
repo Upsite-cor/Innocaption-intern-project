@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { Card, CardFooter, Image, Button } from '@nextui-org/react'
+import { useDispatch } from "react-redux";
 import fetchData from "../Services/products.service";
-
+import cartSlice, { addCart } from "../redux/Slices/cartSlice";
 const Showcase = () => {
     const [products, setProducts] = useState([]);
-
+    const dispatch = useDispatch();
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -21,7 +22,14 @@ const Showcase = () => {
 
     // console.log("Showcase: ", products);
 
-    // const addToCart = () => {}
+    const addToCart = (product) => {
+        //Hi chatgpt can you add a feature here in this function.
+        //If the button is pressed I want that product to be dispatched to my cartslice.
+        // if(!product){
+        //     dispatch(addCart(product));
+        // }
+       
+    }
 
 
     return (
@@ -50,7 +58,7 @@ const Showcase = () => {
                             <Button 
                             className="text-tiny text-white bg-black/20" variant="flat"
                              color="default" radius="lg" 
-                             size="sm">
+                             size="sm" onClick={addToCart(product)}>
                                 Buy Now
                             </Button>
                         </CardFooter>
