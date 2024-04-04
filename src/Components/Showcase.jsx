@@ -1,10 +1,27 @@
-import React from "react"
+import React, {useEffect, useState}  from "react"
 import {Card, CardFooter, Image, Button} from '@nextui-org/react'
 import fetchData from "../Services/products.service";
 
 const Showcase = () => {
+    const [products, setProducts] = useState([]);
+    
+    useEffect(() => {
+        const fetchProducts = async() => {
+            try{
+                const fetchProducts = await fetchData();
+                setProducts(fetchProducts);
+            }
+            catch(error){
+                console.error("Error fetching products: ", error);
+            }
+         
+        }
+        fetchProducts();
+    }, []) 
+
 
     
+
 
 
 

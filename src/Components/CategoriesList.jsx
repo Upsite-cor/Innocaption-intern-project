@@ -19,11 +19,12 @@ export default function CategoriesList(){
             label="Select Category"
             color='secondary'
         >
-        <Checkbox  value="Shoes">Shoes</Checkbox>
-        <Checkbox value="Shirts">Shirts</Checkbox>
-        <Checkbox value="Glasses">Glasses</Checkbox>
-        <Checkbox value="Hats">Hats</Checkbox>
-        <Checkbox value="Socks">Socks</Checkbox>
+        <Checkbox  value="smartphones">Smartphones</Checkbox>
+        <Checkbox value="laptops">Laptops</Checkbox>
+        <Checkbox value="fragrances">Fragrances</Checkbox>
+        <Checkbox value="skincare">Skincare</Checkbox>
+        <Checkbox value="groceries">Groceries</Checkbox>
+        <Checkbox value="home-decoration">Home decoration</Checkbox>
         </CheckboxGroup>
         </div>
     )
