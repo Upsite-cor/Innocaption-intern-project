@@ -9,7 +9,7 @@ const Showcase = () => {
         const fetchProducts = async() => {
             try{
                 const fetchProducts = await fetchData();
-                setProducts(fetchProducts);
+                setProducts(fetchProducts.products);
             }
             catch(error){
                 console.error("Error fetching products: ", error);
@@ -20,41 +20,227 @@ const Showcase = () => {
     }, []) 
 
 
+    console.log("Showcase: ", products);
     
 
+    return(
+        <div id ='showcase-container' className="bg-orange-500 justify-center flex flex-wrap w-[60em]">
+        
+            {products.map(product=>(
+                <div>
+                     <Card
+                 key={product.id}
+                 isFooterBlurred
+                 radius="lg"
+                 className="border-none"
+                >
+                <Image
+                    alt={product.title}
+                    className="object-cover"
+                    height={208}
+                    src={product.thumbnail}
+                    width={200}
+                    />
+                
+                <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+    //         <p className="text-tiny text-white/80">
+    //             Product Name
+    //         </p>
+    //         <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+    //       Buy Now
+    //     </Button>
+    //     </CardFooter>
 
 
 
 
-    return (
-       <div id = 'cardItems' className="flex h-[13em]">
-        <Card
-        isFooterBlurred
-        radius="lg"
-        className="border-none"
-        >
-        <Image
-            alt="product"
-            className="object-cover"
-            height={208}
-            src="/images/hero-scard.jpeg"
-            width={200}
-        />
-        <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-            <p className="text-tiny text-white/80">
-                Product Name
-            </p>
-            <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-          Notify me
-        </Button>
-        </CardFooter>
+                </Card>
+
+
+                </div>
+               
+            ))}
+        
+        
+        
+        </div>
+    )
+
+
+
+    // return (
+    //     <div id='showcase-container' className="bg-orange-500 justify-center flex flex-wrap w-[60em]">
+
+    //    <div id = 'cardItems' className="flex h-[8em] mr-[90px]">
+    //     <Card
+    //     isFooterBlurred
+    //     radius="lg"
+    //     className="border-none"
+    //     >
+    //     <Image
+    //         alt="product"
+    //         className="object-cover"
+    //         height={208}
+    //         src={products[0].thumbnail}
+    //         width={200}
+    //     />
+    //     <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+    //         <p className="text-tiny text-white/80">
+    //             Product Name
+    //         </p>
+    //         <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+    //       Buy Now
+    //     </Button>
+    //     </CardFooter>
 
 
 
 
-        </Card>
-       </div>
-      );
+    //     </Card>
+    //    </div>
+    //    <div id = 'cardItems' className="flex h-[8em] mr-[90px]">
+    //     <Card
+    //     isFooterBlurred
+    //     radius="lg"
+    //     className="border-none"
+    //     >
+    //     <Image
+    //         alt="product"
+    //         className="object-cover"
+    //         height={208}
+    //         src={products[0].thumbnail}
+    //         width={200}
+    //     />
+    //     <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+    //         <p className="text-tiny text-white/80">
+    //             Product Name
+    //         </p>
+    //         <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+    //       Buy Now
+    //     </Button>
+    //     </CardFooter>
+
+
+
+
+    //     </Card>
+    //    </div> 
+    //    <div id = 'cardItems' className="flex h-[8em] mr-[90px]">
+    //     <Card
+    //     isFooterBlurred
+    //     radius="lg"
+    //     className="border-none"
+    //     >
+    //     <Image
+    //         alt="product"
+    //         className="object-cover"
+    //         height={208}
+    //         src={products[0].thumbnail}
+    //         width={200}
+    //     />
+    //     <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+    //         <p className="text-tiny text-white/80">
+    //             Product Name
+    //         </p>
+    //         <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+    //       Buy Now
+    //     </Button>
+    //     </CardFooter>
+
+
+
+
+    //     </Card>
+    //    </div>
+
+    //    <div id = 'cardItems' className="flex h-[8em] mr-[90px]">
+    //     <Card
+    //     isFooterBlurred
+    //     radius="lg"
+    //     className="border-none"
+    //     >
+    //     <Image
+    //         alt="product"
+    //         className="object-cover"
+    //         height={208}
+    //         src={products[0].thumbnail}
+    //         width={200}
+    //     />
+    //     <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+    //         <p className="text-tiny text-white/80">
+    //             Product Name
+    //         </p>
+    //         <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+    //       Buy Now
+    //     </Button>
+    //     </CardFooter>
+
+
+
+
+    //     </Card>
+    //    </div>
+    //    <div id = 'cardItems' className="flex h-[8em] mr-[90px]">
+    //     <Card
+    //     isFooterBlurred
+    //     radius="lg"
+    //     className="border-none"
+    //     >
+    //     <Image
+    //         alt="product"
+    //         className="object-cover"
+    //         height={208}
+    //         src={products[0].thumbnail}
+    //         width={200}
+    //     />
+    //     <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+    //         <p className="text-tiny text-white/80">
+    //             Product Name
+    //         </p>
+    //         <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+    //       Buy Now
+    //     </Button>
+    //     </CardFooter>
+
+
+
+
+    //     </Card>
+    //    </div>
+    //    <div id = 'cardItems' className="flex h-[8em] mr-[90px]">
+    //     <Card
+    //     isFooterBlurred
+    //     radius="lg"
+    //     className="border-none"
+    //     >
+    //     <Image
+    //         alt="product"
+    //         className="object-cover"
+    //         height={208}
+    //         src={products[0].thumbnail}
+    //         width={200}
+    //     />
+    //     <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+    //         <p className="text-tiny text-white/80">
+    //             Product Name
+    //         </p>
+    //         <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+    //       Buy Now
+    //     </Button>
+    //     </CardFooter>
+
+
+
+
+    //     </Card>
+    //    </div>
+       
+    
+       
+    //   </div>
+       
+       
+    //   );
 
 
 }
