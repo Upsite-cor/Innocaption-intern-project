@@ -10,7 +10,7 @@ export default function App() {
     <div>
       <Header/>
       <Divider className="my-3"/>
-      <section id='flexContainer' className="flex bg-slate-500 flex-row space-x-40 space-y-10">
+      <section id='flexContainer' className="flex bg-black flex-row space-x-40 space-y-10">
       <CategoriesList/>
       <Showcase/>
       </section>

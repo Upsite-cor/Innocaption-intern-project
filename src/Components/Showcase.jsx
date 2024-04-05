@@ -80,7 +80,7 @@ const Showcase = () => {
         if(!wantedItem && checkedList.length == 0){
             return(
                 products.map(product => (
-                    <div id='cardItems' className="flex h-[10em] mr-[90px] mb-[5em]">
+                    <div id='cardItems' className="flex h-[10em] mr-[90px] mb-[5.5em]">
                         <Card
                             key={product.id}
                             isFooterBlurred
@@ -190,7 +190,7 @@ const Showcase = () => {
     }
 
     return (
-        <div id='showcase-container' className="bg-orange-500 relative right-[6em] justify-center flex flex-wrap w-[60em]">
+        <div id='showcase-container' className=" relative right-[1em] justify-center flex flex-wrap w-[60em]">
 
           
         {renderItems()}
