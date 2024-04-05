@@ -5,7 +5,7 @@ import Searchbar from '../Utilities/Searchbar/Searchbar';
 import { Button } from '@nextui-org/react';
 import CartPopup from '../Utilities/Cart/Cartpopup';
 
-import cartSlice, {showCart} from '../redux/Slices/cartSlice';
+import cartSlice, {showCart, hideCart} from '../redux/Slices/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Header() {
@@ -38,7 +38,10 @@ function Header() {
                 <div>
                     <li style={listItemStyle} className='flex-col relative left-[40em] top-[1em]'>
                         <Button isIconOnly variant='light' onClick={() => {
-                            dispatch(showCart());
+                            if(!isRevealCart)
+                                dispatch(showCart());
+                            else
+                                dispatch(hideCart());
                         }}>
                             <FaShoppingCart size={30} />
                         </Button>

@@ -16,13 +16,6 @@ export default function Searchbar() {
         fetchProducts();
     }, []);
     console.log(products);
-
-
-    // if(searchValue != ""){
-    //     useEffect(() => {
-    //         dispatch(searchItem(searchValue));
-    //     }, [searchValue])
-    // }
  
 
     return (
@@ -31,8 +24,8 @@ export default function Searchbar() {
             if(item!=""){ 
                  dispatch(searchItem(item));
             }
-            else{
-                dispatch(searchItem(""))
+            else if(item==''){
+                dispatch(searchItem(undefined))
             }
         }}/></div>
 

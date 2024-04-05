@@ -9,11 +9,11 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: initialState,
     reducers: {
-        addCart: (state, action) => {
+        addCartItem: (state, action) => {
             console.log('adding to cart')
             state.myCart.push(action.payload)
         },
-        deleteCart: (state, action) => {
+        deleteCartItem: (state, action) => {
             state.myCart = state.myCart.filter(item => item.id !== action.payload.id);
         },
         showCart: (state) => {
@@ -27,5 +27,5 @@ const cartSlice = createSlice({
     }
 });
 
-export const { addCart, deleteCart, showCart, hideCart } = cartSlice.actions;
+export const { addCartItem, deleteCartItem, showCart, hideCart } = cartSlice.actions;
 export default cartSlice.reducer;

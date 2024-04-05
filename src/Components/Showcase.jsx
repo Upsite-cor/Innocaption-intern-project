@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { Card, CardFooter, Image, Button } from '@nextui-org/react'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import fetchData from "../Services/products.service";
-import cartSlice, { addCart } from "../redux/Slices/cartSlice";
+import cartSlice, { addCartItem } from "../redux/Slices/cartSlice";
+import itemSlice from "../redux/Slices/itemSlice";
+
 const Showcase = () => {
     const [products, setProducts] = useState([]);
+    const wantedItem = useSelector(state => state.searchedItem.desiredItem)
     const dispatch = useDispatch();
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -21,9 +25,12 @@ const Showcase = () => {
     }, [])
 
     const addToCart = (product) => {
-        dispatch(addCart(product));
+        dispatch(addCartItem(product));
     }
 
+    const renderItems = () => {
+        
+    }
 
     return (
         <div id='showcase-container' className="bg-orange-500 relative right-[6em] justify-center flex flex-wrap w-[60em]">
@@ -43,7 +50,6 @@ const Showcase = () => {
                             src={product.thumbnail}
                             width={200}
                         />
-
                         <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
                             <p className="text-tiny text-white/80">
                                 {product.title}
@@ -57,15 +63,8 @@ const Showcase = () => {
                                 Buy Now
                             </Button>
                         </CardFooter>
-
-
-
-
                     </Card>
-
-
                 </div>
-
             ))}
 
 
